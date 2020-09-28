@@ -1,0 +1,12 @@
+React o Reactjs.
+
+> Es una librería JavaScript para crear interfaces de usuario para aplicaciones Web.
+> Desarrolladada por Facebook.
+> Corre en el cliente (No necesita respuesta de un servidor).
+
+Recomendaciones
+React es una libreria Fron End, por lo tanto se recomienda tener conocimientos en esa área en especial.
+* HTML5 y CSS3.
+* JavaScript.
+
+
