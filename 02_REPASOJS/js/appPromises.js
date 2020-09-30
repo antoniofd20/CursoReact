@@ -17,7 +17,7 @@
 //});
 
 //
-const descargarUsuarios = cantidad => new Promise((resolve, reject) => {
+const descargarUsuarios = (cantidad) => new Promise((resolve, reject) => {
     // Pasar la cantidad a mi api
 
     const api = `https://randomuser.me/api/?results=${cantidad}&nat=us`;
@@ -44,14 +44,35 @@ const descargarUsuarios = cantidad => new Promise((resolve, reject) => {
     xhr.send();
 });
 
+// Numero de usuarios que queremos
 descargarUsuarios(20)
     .then(
-        miembros => console.log(miembros),
+        // Llamamos a la funcion que va a mostrar a los miebros en html
+        miembros => imprimirHTML(miembros),
         error => console.error(
             new Error('Hubo un error' + error)
         )
-    )
+    );
 
+// Funcion para imprimir en el html
+function imprimirHTML(usuarios) {
+    let html = '';
+    // For que recorre a todos los usuarios de nuestro arreglo
+    usuarios.forEach(usuario => {
+        html += `
+            <li>
+                Nombre: ${usuario.name.first} ${usuario.name.last}
+                País: ${usuario.nat}
+                Imagen:
+                    <img src="${usuario.picture.medium}">
+            </li>
+        `;
+    });
+
+    // Esta estrucctura siempre es igual
+    const contenedorApp = document.querySelector('#app');
+    contenedorApp.innerHTML = html;
+}
 /** Proximo video => 20
  * 
  *  https://mega.nz/folder/NigAnKaB#2uGl78a19MRo6zSnkt2HoA/folder/RyolVQrA
