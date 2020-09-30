@@ -28,5 +28,22 @@ const tarea1 = new Tarea('Aprender JavaScript y React', 'Urgente');
 console.log(tarea1);
 console.log(tarea1.mostrarInformacionTarea());
 
+// Destructuring de objetos
+const aprendiendoJS = {
+    version: {
+        nueva: 'ES6+',
+        anterior: 'ES5'
+    },
+    frameworks: ['React', 'VueJS', 'Angular']
+}
+// Destructuring es extraer valores de un objetos
+console.log(aprendiendoJS);
+// Version anterior
+let version = aprendiendoJS.version;
+console.log(version);
+// Forma nueva
+let {anterior} = aprendiendoJS.version;
+console.log(anterior);
+
 // Proximo video# 12 carpeta 2
-// https://mega.nz/folder/NigAnKaB#2uGl78a19MRo6zSnkt2HoA/folder/RyolVQrA
+// https://mega.nz/folder/NigAnKa 
