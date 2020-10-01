@@ -17,11 +17,26 @@ class Tarea {
     }
 }
 
+class ComprasPendientes extends Tarea {
+    constructor (nombre, prioridad, cantidad){
+        super(nombre, prioridad);
+        this.cantidad = cantidad;
+    }
+    mostrar() {
+        super.mostrar();
+        console.log(`y la cantidad es de: ${this.cantidad}`);
+    }
+}
+
 // Crear los objetos
 let tarea1 = new Tarea('Aprender JavaScript', 'Alta');
 
 // Mandamos a llamar al objeto.metodo()
 console.log(tarea1.mostrar());
+
+// Compras
+let compra1 = new ComprasPendientes('jabon', 'urgente', 3)
+compra1.mostrar();
 
 /** Proximo video => 22
  * 
