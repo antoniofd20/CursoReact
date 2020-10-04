@@ -9,4 +9,22 @@ React es una libreria Fron End, por lo tanto se recomienda tener conocimientos e
 * HTML5 y CSS3.
 * JavaScript.
 
+CREATE-REACT-APP
 
+=> Una forma sencilla de comenzar proyectos en React.
+=> Podrás comenzar a escribir código en React en un par de minutos.
+=> Te avita tener que configurar webpack, babel o parcel.
+=> Funciona con Mac, Windows o Linux.
+=> Requiere NodeJS con NPM para instalarse.
+=> Se puede instalar con Yarn.
+
+WEBPACK
+
+=> Es un Bundler (paquete) de módulos para aplicaciones JavaScript modernas. Procesa la aplicación y mapea todas las dependencias de un módulo, con esto crea uno o varios paquetes o bundlers.
+=> Con webpack podrás incorporar dependendencias tales como archivos CSS, Módulos JavaScript, Otras librerías JavaScript en tu proyecto, tendrás ademas un sevidor local con Live Reload.
+=> Además de transpirar tu código de JavaScript moderno a versiones anteriores de JavaScript para mayor compatibilidad con Babel.
+
+Para iniciar un nuevo proyecto debemos crear una carpeta donde lo queremos y en terminal escribir:
+	$ npx create-react-app "nombre_del_proyecto"
+Despues entrar a la carpeta y escribir:
+	$ npm start
