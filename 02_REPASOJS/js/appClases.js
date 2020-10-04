@@ -1,5 +1,25 @@
-// Escribir clases
+// Exportar Strings
+/*
+const nombreTarea = 'Pasear al perro';
+const nuevaTarea = 'Esta es una nueva tarea';
+export default {
+    nombreTarea: nombreTarea,
+    nuevaTarea: nuevaTarea
+}
+*/
 
+export const nombreTarea = 'Pasear al perro';
+
+// Exportar funciones
+export const crearTarea = (tarea, urgencia) => {
+    return `La tarea ${tarea} tiene una urgenica de ${urgencia}`;
+}
+
+export const tareaFinalizada = () => {
+    console.log('La tarea se realizo con exito');
+}
+
+// Escribir clases
 class Tarea {
     /** El constructor es de donde van a surguir
      *  los objetos
