@@ -5,6 +5,7 @@
 
 import React from 'react';
 
+// los props van como argumento y entre llaves {titulo}
 function Header({titulo}) {
     // Aquí se puede incluir códio JavaScript
 
