@@ -16,6 +16,8 @@ function App() {
   
   // useEffect para realizar ciertas operaciones cuando el state cambia
   useEffect( () => {
+    let citasIniciales = JSON.parse(localStorage.getItem('citas'));
+
     if(citasIniciales) {
       localStorage.setItem('citas', JSON.stringify(citas));
     } else {
@@ -71,4 +73,7 @@ export default App;
 
 /** Proximo video #9 carpeta 5
  *  https://mega.nz/folder/NigAnKaB#2uGl78a19MRo6zSnkt2HoA/folder/cvp1RY6a
+ * 
+ *  Link del sitio:
+ *  https://elated-leavitt-9431be.netlify.app
  */
