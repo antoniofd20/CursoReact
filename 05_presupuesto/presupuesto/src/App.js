@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Pregunta from './components/Pregunta';
 import Formulario from './components/Formulario';
+import Listado from './components/Listado';
+import ControlPresupuesto from './components/ControlPresupuesto';
 
 function App() {
 
@@ -8,6 +10,30 @@ function App() {
   const [presupuesto, guardarPresupuesto ] = useState(0);
   const [ restante, guardarResrante ] = useState(0);
   const [ mostrarpregunta, actualizarPregunta ] = useState(true);
+  const [ gastos, guardarGastos ] = useState([]);
+  const [ gasto, guardarGasto ] = useState({});
+  const [ creargasto, guardarCrearGasto ] = useState(false);
+
+  // useEffect que actualiza el restante 
+  useEffect(() => {
+    if(creargasto){
+
+      // Agrega el nuevo presupuesto
+      guardarGastos([
+        ...gastos,
+        gasto
+      ]);
+
+      // Resta del presupuesto actual
+      const presupuestoRestante = restante - gasto.cantidad;
+      guardarResrante(presupuestoRestante);
+
+      // resetear el false
+      guardarCrearGasto(false);
+    }
+  }, [gasto, creargasto, gastos, restante]);
+
+  const titulo = gastos.length === 0 ? 'No hay gastos aún' : 'Lista de tus gastos';
 
   return (
     <div className = "container">
@@ -25,10 +51,20 @@ function App() {
           ) : (
             <div className = "row">
               <div className = "one-half column">
-                <Formulario/>
+                <Formulario
+                  guardarGasto = {guardarGasto}
+                  guardarCrearGasto = {guardarCrearGasto}
+                />
               </div>
               <div className = "one-half column">
-                2
+                <h2>{titulo}</h2>
+                <Listado
+                  gastos = {gastos}
+                />
+                <ControlPresupuesto
+                  presupuesto = {presupuesto}
+                  restante = {restante}
+                />
               </div>
             </div>
           )}
